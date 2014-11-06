@@ -1,0 +1,179 @@
+/*
+
+  FRAME
+  Author: Andre Firchow - http://firchow.net
+
+  credits: http://nicolasgallagher.com/css-drop-shadows-without-images/demo/
+
+/**********************************************************/
+.frame {
+  display: inline-block;
+  margin: 30px;
+  max-width: 100%; }
+  .frame .frame__body {
+    min-width: 320px;
+    background: #ADD8E6;
+    color: #333;
+    margin: 0;
+    padding: 10px; }
+  .frame .frame__body--image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding: 0; }
+
+/*************************************/
+/* FLAT */
+.frame--flat {
+  position: relative; }
+
+.frame--flat--shadow {
+  -webkit-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.15); }
+
+.frame--flat--shadow--perspective:before, .frame--flat--shadow--perspective:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: #ccc;
+  -webkit-transform: skew(25deg);
+  -moz-transform: skew(25deg);
+  -ms-transform: skew(25deg);
+  -o-transform: skew(25deg);
+  transform: skew(25deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%; }
+.frame--flat--shadow--perspective:after {
+  left: auto;
+  right: 0;
+  -webkit-transform: skew(-25deg);
+  -moz-transform: skew(-25deg);
+  -ms-transform: skew(-25deg);
+  -o-transform: skew(-25deg);
+  transform: skew(-25deg); }
+
+.frame--flat--shadow--down {
+  box-shadow: 1px 1px 0px #ccc, 2px 2px 0px #ccc, 3px 3px 0px #ccc, 4px 4px 0px #ccc, 5px 5px 0px #ccc, 6px 6px 0px #ccc, 7px 7px 0px #ccc, 8px 8px 0px #ccc, 9px 9px 0px #ccc, 10px 10px 0px #ccc, 11px 11px 0px #ccc, 12px 12px 0px #ccc, 13px 13px 0px #ccc, 14px 14px 0px #ccc, 15px 15px 0px #ccc, 16px 16px 0px #ccc, 17px 17px 0px #ccc, 18px 18px 0px #ccc, 19px 19px 0px #ccc, 20px 20px 0px #ccc, 21px 21px 0px #ccc, 22px 22px 0px #ccc, 23px 23px 0px #ccc, 24px 24px 0px #ccc, 25px 25px 0px #ccc, 26px 26px 0px #ccc, 27px 27px 0px #ccc, 28px 28px 0px #ccc, 29px 29px 0px #ccc, 30px 30px 0px #ccc, 31px 31px 0px #ccc, 32px 32px 0px #ccc, 33px 33px 0px #ccc, 34px 34px 0px #ccc, 35px 35px 0px #ccc; }
+
+/*************************************/
+/* BORDER */
+.frame--border {
+  position: relative;
+  border: 1px solid #ccc; }
+
+.frame--border--passepartout:before, .frame--border--passepartout:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 6px solid #fff;
+  top: 0;
+  left: 0; }
+.frame--border--passepartout:after {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  width: auto;
+  height: auto; }
+
+/*************************************/
+/* DROP SHADOW */
+.frame--shadow {
+  position: relative;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
+  .frame--shadow:before, .frame--shadow:after {
+    content: "";
+    position: absolute;
+    z-index: -2; }
+
+/* Lifted corners */
+.frame--shadow--lifted {
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+  .frame--shadow--lifted:before, .frame--shadow--lifted:after {
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    max-width: 300px;
+    max-height: 100px;
+    -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+  .frame--shadow--lifted:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg); }
+
+/* Perspective */
+.frame--shadow--perspective:before {
+  left: 80px;
+  bottom: 5px;
+  width: 50%;
+  height: 35%;
+  max-width: 200px;
+  max-height: 50px;
+  -webkit-box-shadow: -80px 0 8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: -80px 0 8px rgba(0, 0, 0, 0.4);
+  box-shadow: -80px 0 8px rgba(0, 0, 0, 0.4);
+  -webkit-transform: skew(50deg);
+  -moz-transform: skew(50deg);
+  -ms-transform: skew(50deg);
+  -o-transform: skew(50deg);
+  transform: skew(50deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%; }
+
+/* Raised shadow - no pseudo-elements needed */
+.frame--shadow--raised {
+  -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+
+/* Curved shadows */
+.frame--shadow--curved:before {
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  right: 50%;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  -moz-border-radius: 10px / 100px;
+  border-radius: 10px / 100px; }
+
+.frame--shadow--curved--vertical:before {
+  right: 0; }
+
+.frame--shadow--curved--horizontal:before {
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px; }
